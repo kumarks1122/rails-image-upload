@@ -1,0 +1,58 @@
+1.What is MVC and its difference from Traditional approach ?
+	MVC means model,view and controller. It is one of the approach of the website development.
+	In Rails the view part is GUI part of the user, then model part is the db part such as access the tables.The controller part is control the view and db to the user such as action,redirection.
+	In traditional approach the every controlling and db manipulating processes are working at every pahases. But the MVC approach have every controls on the control phase, gui part can only in view, db only in model.
+
+2.What is RVM , is it recommended ?
+	RVM stands from Ruby Version Manager. It is the ruby and rails installation media for the linux and mac based OSs.
+	It is not strictly recommended.Because we can also install the rails and gems without rvm.
+
+3.What are Gems and where its installed ?
+	In ruby on rails the gems are the packages of the app such as mysql,rails,paperclip,...
+	The rubygems is the package manager of the rails apps. The gems are installed in the Gemfile and Gemfile.lock .
+	In the Gemfile the gems are included and Gemfile.lock have the gems with version or below version package configuration.
+	The gems are installed in the ruby application.
+4.What is the role of Gemfile.lock , in rails ?
+	The Gemfile.lock is the gems manager for manage the gems verions like the actions are current verision are belower version of the gems.
+	It is also allow to use the gem packages bundle to the application.
+
+5.How Rails routes working ?
+	Type 1.In rails app the routng process first check the root to the action.
+		example: root "user#index"
+	In the 
+	In this routing it goes to find the controller to find the action. then its goes to views folder.
+	Type 2.Another type of routing is get the url and route the given url to action.
+		example: get "user/demo" => "user#registration"
+	the every get the url action should be defined in the get type.
+	These all are routing can be managed in the routes.rb
+
+6.What is Rake , is this specific to rails ?
+	Rake is the one of the  middleware of the Rails applications.the every db management process to models are managed in the rake
+	Such as db migration and assets rakes,testing,...etc.
+
+7.What is the benefits of Migration ?
+	Migration is the process of db manipulation.
+	The main benefits of migration is rollback such as undo and redo of the db actions.
+
+8.What are the different types of Data base Rails supports?
+	i)sqlite3
+	ii)mysql
+	iii)postgresql
+
+9.What is Strong parameters in rails 4 ?
+	In the parameter data required and permitted datas are strong parameters.
+	Strong parameters are the one of the mass assignment of the rails.Specially these are used in the rails 4th or later version.
+	Example:
+	i) permited params:
+		params.permit(:firstname,:lastname)
+	ii)reuired article with permitted params:
+		params.require(:user).permit(:firstname,:lastname)
+
+10.What are the default actions of Rails controller ?
+	In the every controller the index is the default action to the routing.
+	And change is the default application for the model and migrations.
+
+11.What are scopes ?
+	In the rails applications the scopes are act as a method for access the table column as provided by the model to the controller or also can use in view.
+	Example:
+		scope :firstname,lambda {where(:type=>"student")}
